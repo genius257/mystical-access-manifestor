@@ -1,0 +1,18 @@
+{
+    "name": "genius257/mystical-access-manifestor",
+    "description": "The Mystical Access Manifestor is an enigmatic ciphercrafting compendium, harnessing the chaotic randomness of the cosmos to conjure ethereal passcodes of unparalleled obscurity and transcendental security.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Genius257\\MysticalAccessManifestor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anders Pedersen",
+            "email": "hot415@hotmail.com"
+        }
+    ],
+    "require": {}
+}
