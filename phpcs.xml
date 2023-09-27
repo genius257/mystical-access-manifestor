@@ -8,6 +8,10 @@
 
     <!-- Choose the coding standard -->
     <arg name="standard" value="PSR12"/>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="s" />
+
     <rule ref="PSR12"/>
 
     <!-- Disable the "Each class must be in a namespace of at least one level" rule for the tests folder -->
