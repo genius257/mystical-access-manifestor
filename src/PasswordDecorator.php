@@ -16,7 +16,7 @@ abstract class PasswordDecorator implements Generator
 
         // Find all occurences of the placeholder char
         preg_match_all('/\0/', $generated, $matches, PREG_OFFSET_CAPTURE);
-        
+
         // If no placeholder is found, just return the previous generated password
         if (empty($matches[0])) {
             return $generated;
@@ -26,9 +26,12 @@ abstract class PasswordDecorator implements Generator
          * Random position(s) from the available placeholders
          */
         $targets = array_rand($matches[0], $this->length);
+
         $chars = str_shuffle($this->chars);
+        $charsLength = strlen($chars);
+
         foreach ($targets as $index => $target) {
-            $generated[$matches[0][$target][1]] = $chars[$index];
+            $generated[$matches[0][$target][1]] = $chars[$index % $charsLength];
         }
 
         return $generated;
