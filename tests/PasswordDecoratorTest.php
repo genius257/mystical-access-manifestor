@@ -19,7 +19,7 @@ class PasswordDecoratorTest extends TestCase
      */
     public function testConstructor()
     {
-        $instance = $this->makeInstance(new PasswordGenerator(10), 10);
+        $this->makeInstance(new PasswordGenerator(10), 10);
 
         // This test only checks that the constructor works, not that it does anything.
         $this->assertEquals(1, 1);
