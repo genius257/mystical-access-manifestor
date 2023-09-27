@@ -10,7 +10,11 @@
     <arg name="standard" value="PSR12"/>
     <rule ref="PSR12"/>
 
-    <!-- You can add additional rules and settings here if needed -->
+    <!-- Disable the "Each class must be in a namespace of at least one level" rule for the tests folder -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>tests/</exclude-pattern>
+    </rule>
+
     <rule ref="Generic.PHP.ForbiddenFunctions">
         <properties>
             <property name="forbiddenFunctions" type="array" extend="true">
