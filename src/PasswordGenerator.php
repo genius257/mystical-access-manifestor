@@ -10,6 +10,6 @@ class PasswordGenerator implements Generator
 
     public function generate(): string
     {
-        return str_pad('', $this->length, "\0");
+        return str_repeat("\0", $this->length);
     }
 }
