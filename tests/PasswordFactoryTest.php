@@ -112,7 +112,7 @@ class PasswordFactoryTest extends TestCase
         $factory->withSymbols(2);
         $finalDecorator = $factory->build();
 
-        $extractParentGenerator = function (PasswordDecorator $factory) {
+        $extractGenerator = function (PasswordDecorator $factory) {
             $reflectionClass = new ReflectionClass($factory);
             $reflectionProperty = $reflectionClass->getProperty('generator');
             $reflectionProperty->setAccessible(true);
@@ -122,13 +122,13 @@ class PasswordFactoryTest extends TestCase
         $decorator = $finalDecorator;
         $this->assertInstanceOf(Symbol::class, $decorator);
 
-        $decorator = $extractParentGenerator($decorator);
+        $decorator = $extractGenerator($decorator);
         $this->assertInstanceOf(LowerCase::class, $decorator);
 
-        $decorator = $extractParentGenerator($decorator);
+        $decorator = $extractGenerator($decorator);
         $this->assertInstanceOf(Number::class, $decorator);
 
-        $decorator = $extractParentGenerator($decorator);
+        $decorator = $extractGenerator($decorator);
         $this->assertInstanceOf(get_class($baseDecorator), $decorator);
     }
 }
